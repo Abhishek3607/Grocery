@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import { IoHeartSharp } from "react-icons/io5";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
-import { TbMenu2 } from "react-icons/tb";
+import { TbMenu2, TbMenu3 } from "react-icons/tb";
 
 const Navbar = () => {
 
     const [showMenu, setShowMenu] = useState(false)
 
     const toggleMenu = () => {
-        setShowMenu(!showMenu)  // Acts as toggle
-        console.log(setShowMenu);
-        
+        setShowMenu(!showMenu)  // Acts as toggle        
     }
 
   return (
@@ -78,13 +76,13 @@ const Navbar = () => {
           </a>
 
           {/* Hamburger */}
-          <a href="" className="text-zinc-800 text-3xl md:hidden" onClick={toggleMenu}>
-            <TbMenu2 />
+          <a href="#" className="text-zinc-800 text-3xl md:hidden" onClick={toggleMenu}>
+            {showMenu ? <TbMenu3 /> : <TbMenu2 />}
           </a>
         </div>
 
         {/* Mobile Menu */}
-        <ul className={`md:hidden items-center gap-x-15 flex flex-col gap-y-12 bg-orange-700/15 backdrop-blur-xl rounded-2xl p-10 absolute top-30 -left-full transform -translate-x-1/2 transition-all duration-500 ${showMenu ? 'left-1/2' : ""}`}>
+        <ul className={`md:hidden items-center gap-x-15 flex flex-col gap-y-12 bg-orange-600/25 backdrop-blur-xl rounded-2xl p-10 absolute top-30 -left-full transform -translate-x-1/2 transition-all duration-300  ${showMenu ? 'left-1/2' : ""}`}>
           <li>
             <a href="" className="font-semibold tracking-wider text-orange-500">
               Home
