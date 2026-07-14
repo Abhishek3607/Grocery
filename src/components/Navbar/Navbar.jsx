@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoHeartSharp } from "react-icons/io5";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
@@ -7,14 +7,24 @@ import { TbMenu2, TbMenu3 } from "react-icons/tb";
 const Navbar = () => {
 
     const [showMenu, setShowMenu] = useState(false)
+    const [isScrolled, setIsScrolled] = useState(false)
 
     const toggleMenu = () => {
         setShowMenu(!showMenu)  // Acts as toggle        
     }
 
+    useEffect(() => {
+      const handleScroll = () => {
+        setIsScrolled(window.scrollY > 10)
+      }
+
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
   return (
-    <header className="fixed top-0 right-0 left-0 bg-white z-50">
-      <nav className="flex justify-between max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] items-center">
+    <header className={`fixed top-0 right-0 left-0 bg-white z-50 ${isScrolled ? 'shadow-xl' : null}`}>
+      <nav className="flex justify-between max-w-[1400px] mx-auto px-10 md:h-[12vh] h-[10vh] items-center">
         <a href="" className="text-3xl font-semibold">
           Gr<span className="text-orange-500">O</span>gify
         </a>
