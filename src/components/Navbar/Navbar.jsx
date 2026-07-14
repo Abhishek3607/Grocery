@@ -13,7 +13,7 @@ const Navbar = () => {
     }
 
   return (
-    <header className="fixed top-0 right-0 left-0 bg-white">
+    <header className="fixed top-0 right-0 left-0 bg-white z-50">
       <nav className="flex justify-between max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] items-center">
         <a href="" className="text-3xl font-semibold">
           Gr<span className="text-orange-500">O</span>gify
