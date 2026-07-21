@@ -1,4 +1,4 @@
-import React from "react";
+
 import { FaHeart, FaPlus } from "react-icons/fa";
 import Button from "../Button/Button";
 

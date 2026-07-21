@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Button from '../Button/Button';
 import freshFruits from '../../assets/fresh-fruits.png'
 

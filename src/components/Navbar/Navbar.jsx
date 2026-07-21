@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { IoHeartSharp } from "react-icons/io5";
 import { RiShoppingBag4Fill } from "react-icons/ri";
 import { IoSearch } from "react-icons/io5";
